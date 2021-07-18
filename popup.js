@@ -25,9 +25,11 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
+        document.getElementById("txt").textContent="Hi " + user.displayName + "!";
         document.getElementById("gBtn").style.display = 'none';
         document.getElementById("ytBtn").style.display = 'block';
     } else {
+        document.getElementById("txt").textContent="Login with Google";
         document.getElementById("ytBtn").style.display = 'none';
         document.getElementById("gBtn").style.display = 'block';
     }

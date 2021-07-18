@@ -3,16 +3,34 @@
         <title>enComment</title>
         <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+        <style>
+            body{
+                width: 200px;
+                height:400px;
+            }
+            a {
+                background-color: white;
+                color: black;
+                padding: 5px;
+                text-decoration: none;
+                border: 1px solid black;
+            }
+            a:hover {
+                background-color: black;
+                color: white;
+            }
+        </style>
     </head>
     <body>
         <div class="row">
             <div class="col-md-3" id="showBtn">
-                <button id="gBtn" type="submit" class="btn btn-outline">
+                <span id="txt"></span>
+                <button id="gBtn" type="submit">
                     <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
                     Login with Google
                 </button>
-                <a href="https://youtube.com/" id="ytBtn" type="submit" class="btn btn-outline" target="_blank">
-                    <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://cdn1.iconfinder.com/data/icons/logotypes/32/youtube-512.png" />
+                <a href="https://youtube.com/" id="ytBtn" type="submit" target="_blank">
+                    <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="YouTube" src="https://cdn1.iconfinder.com/data/icons/logotypes/32/youtube-512.png" />
                     Continue to YouTube
                 </a>
             </div>
