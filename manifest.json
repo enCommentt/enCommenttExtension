@@ -1,12 +1,12 @@
 {
     "manifest_version": 2,
     "name": "enCommentt",
-    "description": "",
+    "description": "Enables you to comment in youtube videos those have disabled comment section",
     "version": "0.01",
-    "icon": {"128": "icon_128.png"},
     "browser_action": {
         "default_icon": "icon.png",
-        "deafault_popup": "popup.html"
+        "default_popup": "popup.html"
     },
-    "permission": ["activeTab"]
+    "permissions": [],
+    "content_security_policy": "script-src 'self' https://cdn.firebase.com https://apis.google.com https://www.gstatic.com; object-src 'self'"
 }

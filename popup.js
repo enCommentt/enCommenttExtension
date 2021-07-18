@@ -1,10 +1,15 @@
+document.getElementById("gBtn").addEventListener("click", googleSignIn);
+document.getElementById("ytBtn").addEventListener("click", conYt);
+
 function googleSignIn(){
     base_provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(base_provider).then(function(result){
-        console.log("1");
     }).catch(function(err){
-        console.log("2");
     })
+}
+
+function conYt(){
+    window.location = "http://www.youtube.com";
 }
 
 var firebaseConfig = {
@@ -16,17 +21,14 @@ var firebaseConfig = {
     appId: "1:405847574047:web:cb0ec926ab308b8e15b72a",
     measurementId: "G-EC2NG52WRK"
 };
-firebase.initializeApp(firebaseConfig);
 
+firebase.initializeApp(firebaseConfig);
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        console.log("greetings, continue to youtube");
+        document.getElementById("gBtn").style.display = 'none';
+        document.getElementById("ytBtn").style.display = 'block';
     } else {
-        document.querySelector('#showBtn').innerHTML =`
-        <button type="submit" class="btn btn-outline" onclick="googleSignIn()">
-            <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-            Login with Google
-        </button>
-        `
+        document.getElementById("ytBtn").style.display = 'none';
+        document.getElementById("gBtn").style.display = 'block';
     }
   });
